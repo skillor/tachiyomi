@@ -1,12 +1,8 @@
-name: PR build check
-on:
-  pull_request:
-    paths-ignore:
-      - '**.md'
-      - 'app/src/main/res/**/strings.xml'
+name: build
+on: workflow_dispatch
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  group: ${{ github.workflow }}
   cancel-in-progress: true
 
 permissions:
@@ -36,4 +32,4 @@ jobs:
       - name: Build app and run unit tests
         uses: gradle/gradle-command-action@v2
         with:
-          arguments: assembleStandardRelease testStandardReleaseUnitTest
+          arguments: assembleStandardRelease
