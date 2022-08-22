@@ -62,6 +62,7 @@ class ChaptersSettingsSheet(
 
     /**
      * Filters group (unread, downloaded, ...).
+     * TODO: filter provider
      */
     inner class Filter @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null) :
         Settings(context, attrs) {
