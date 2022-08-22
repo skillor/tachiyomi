@@ -32,4 +32,4 @@ jobs:
           arguments: assembleStandardRelease
           
       - name: list files
-        run: ls -ltR | grep .apk
+        run: ls -ldtR | grep .apk
